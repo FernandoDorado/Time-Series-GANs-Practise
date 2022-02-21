@@ -70,7 +70,7 @@ def predictive_score_metrics (ori_data, generated_data):
     with tf.compat.v1.variable_scope("predictor", reuse = tf.compat.v1.AUTO_REUSE) as vs:
       p_cell = tf.compat.v1.nn.rnn_cell.GRUCell(num_units=hidden_dim, activation=tf.nn.tanh, name = 'p_cell')
       p_outputs, p_last_states = tf.compat.v1.nn.dynamic_rnn(p_cell, x, dtype=tf.float32, sequence_length = t)
-      y_hat_logit = tf.contrib.layers.fully_connected(p_outputs, 1, activation_fn=None) 
+      y_hat_logit = tf.compat.v1.layers.dense(p_outputs, 1, activation=None) 
       y_hat = tf.nn.sigmoid(y_hat_logit)
       p_vars = [v for v in tf.compat.v1.all_variables() if v.name.startswith(vs.name)]
     
