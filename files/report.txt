@@ -1,0 +1,182 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 7 files
+Detected 10 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: ./utils.py
+--------------------------------------------------------------------------------
+./utils.py:101:15: WARNING: tf.contrib.rnn.LayerNormBasicLSTMCell requires manual check. (Manual edit required) `tf.contrib.rnn.LayerNormBasicLSTMCell` has been migrated to `tfa.rnn.LayerNormLSTMCell` in TensorFlow Addons. The API spec may have changed during the migration. Please see https://github.com/tensorflow/addons for more info.
+./utils.py:101:15: WARNING: Using member tf.contrib.rnn.LayerNormBasicLSTMCell in deprecated module tf.contrib.rnn. (Manual edit required) tf.contrib.rnn.* has been deprecated, and widely used cells/functions will be moved to tensorflow/addons repository. Please check it there and file Github issues if necessary.
+./utils.py:101:15: ERROR: Using member tf.contrib.rnn.LayerNormBasicLSTMCell in deprecated module tf.contrib. tf.contrib.rnn.LayerNormBasicLSTMCell cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: ./timegan.py
+--------------------------------------------------------------------------------
+./timegan.py:97:10: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+./timegan.py:113:16: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+./timegan.py:129:10: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+./timegan.py:145:10: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+./timegan.py:161:14: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: ./metrics/discriminative_metrics.py
+--------------------------------------------------------------------------------
+./metrics/discriminative_metrics.py:79:20: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: ./metrics/predictive_metrics.py
+--------------------------------------------------------------------------------
+./metrics/predictive_metrics.py:73:20: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: './'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file './utils.py'
+ outputting to 'v2_code/utils.py'
+--------------------------------------------------------------------------------
+
+95:15: INFO: Renamed 'tf.nn.rnn_cell.GRUCell' to 'tf.compat.v1.nn.rnn_cell.GRUCell'
+98:15: INFO: Renamed 'tf.contrib.rnn.BasicLSTMCell' to 'tf.compat.v1.nn.rnn_cell.BasicLSTMCell'
+101:15: WARNING: tf.contrib.rnn.LayerNormBasicLSTMCell requires manual check. (Manual edit required) `tf.contrib.rnn.LayerNormBasicLSTMCell` has been migrated to `tfa.rnn.LayerNormLSTMCell` in TensorFlow Addons. The API spec may have changed during the migration. Please see https://github.com/tensorflow/addons for more info.
+101:15: WARNING: Using member tf.contrib.rnn.LayerNormBasicLSTMCell in deprecated module tf.contrib.rnn. (Manual edit required) tf.contrib.rnn.* has been deprecated, and widely used cells/functions will be moved to tensorflow/addons repository. Please check it there and file Github issues if necessary.
+101:15: ERROR: Using member tf.contrib.rnn.LayerNormBasicLSTMCell in deprecated module tf.contrib. tf.contrib.rnn.LayerNormBasicLSTMCell cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file './main_timegan.py'
+ outputting to 'v2_code/main_timegan.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file './timegan.py'
+ outputting to 'v2_code/timegan.py'
+--------------------------------------------------------------------------------
+
+80:6: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+81:6: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+82:6: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+94:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+94:47: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+95:15: INFO: Renamed 'tf.nn.rnn_cell.MultiRNNCell' to 'tf.compat.v1.nn.rnn_cell.MultiRNNCell'
+96:33: INFO: Renamed 'tf.nn.dynamic_rnn' to 'tf.compat.v1.nn.dynamic_rnn'
+97:10: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+110:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+110:47: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+111:15: INFO: Renamed 'tf.nn.rnn_cell.MultiRNNCell' to 'tf.compat.v1.nn.rnn_cell.MultiRNNCell'
+112:33: INFO: Renamed 'tf.nn.dynamic_rnn' to 'tf.compat.v1.nn.dynamic_rnn'
+113:16: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+126:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+126:48: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+127:15: INFO: Renamed 'tf.nn.rnn_cell.MultiRNNCell' to 'tf.compat.v1.nn.rnn_cell.MultiRNNCell'
+128:33: INFO: Renamed 'tf.nn.dynamic_rnn' to 'tf.compat.v1.nn.dynamic_rnn'
+129:10: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+142:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+142:49: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+143:15: INFO: Renamed 'tf.nn.rnn_cell.MultiRNNCell' to 'tf.compat.v1.nn.rnn_cell.MultiRNNCell'
+144:33: INFO: Renamed 'tf.nn.dynamic_rnn' to 'tf.compat.v1.nn.dynamic_rnn'
+145:10: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+158:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+158:52: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+159:15: INFO: Renamed 'tf.nn.rnn_cell.MultiRNNCell' to 'tf.compat.v1.nn.rnn_cell.MultiRNNCell'
+160:33: INFO: Renamed 'tf.nn.dynamic_rnn' to 'tf.compat.v1.nn.dynamic_rnn'
+161:14: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+182:23: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+183:23: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+184:23: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+185:23: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+186:23: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+189:16: INFO: tf.losses.sigmoid_cross_entropy requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+189:16: INFO: Renamed 'tf.losses.sigmoid_cross_entropy' to 'tf.compat.v1.losses.sigmoid_cross_entropy'
+190:16: INFO: tf.losses.sigmoid_cross_entropy requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+190:16: INFO: Renamed 'tf.losses.sigmoid_cross_entropy' to 'tf.compat.v1.losses.sigmoid_cross_entropy'
+191:18: INFO: tf.losses.sigmoid_cross_entropy requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+191:18: INFO: Renamed 'tf.losses.sigmoid_cross_entropy' to 'tf.compat.v1.losses.sigmoid_cross_entropy'
+196:13: INFO: tf.losses.sigmoid_cross_entropy requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+196:13: INFO: Renamed 'tf.losses.sigmoid_cross_entropy' to 'tf.compat.v1.losses.sigmoid_cross_entropy'
+197:15: INFO: tf.losses.sigmoid_cross_entropy requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+197:15: INFO: Renamed 'tf.losses.sigmoid_cross_entropy' to 'tf.compat.v1.losses.sigmoid_cross_entropy'
+200:13: INFO: tf.losses.mean_squared_error requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+200:13: INFO: Renamed 'tf.losses.mean_squared_error' to 'tf.compat.v1.losses.mean_squared_error'
+203:14: INFO: Added keywords to args of function 'tf.reduce_mean'
+203:44: INFO: Added keywords to args of function 'tf.nn.moments'
+203:90: INFO: Added keywords to args of function 'tf.nn.moments'
+204:14: INFO: Added keywords to args of function 'tf.reduce_mean'
+204:37: INFO: Added keywords to args of function 'tf.nn.moments'
+204:69: INFO: Added keywords to args of function 'tf.nn.moments'
+212:14: INFO: tf.losses.mean_squared_error requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+212:14: INFO: Renamed 'tf.losses.mean_squared_error' to 'tf.compat.v1.losses.mean_squared_error'
+217:14: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+218:13: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+219:13: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+220:13: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+221:14: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+224:9: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+225:11: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file './data_loading.py'
+ outputting to 'v2_code/data_loading.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file './metrics/discriminative_metrics.py'
+ outputting to 'v2_code/metrics/discriminative_metrics.py'
+--------------------------------------------------------------------------------
+
+39:2: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+57:6: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+58:10: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+60:6: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+61:10: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+76:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+76:52: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+77:15: INFO: Renamed 'tf.nn.rnn_cell.GRUCell' to 'tf.compat.v1.nn.rnn_cell.GRUCell'
+78:33: INFO: Renamed 'tf.nn.dynamic_rnn' to 'tf.compat.v1.nn.dynamic_rnn'
+79:20: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+81:27: INFO: Renamed 'tf.all_variables' to 'tf.compat.v1.all_variables'
+89:16: INFO: Added keywords to args of function 'tf.reduce_mean'
+91:16: INFO: Added keywords to args of function 'tf.reduce_mean'
+96:13: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+100:9: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+101:11: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file './metrics/visualization_metrics.py'
+ outputting to 'v2_code/metrics/visualization_metrics.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file './metrics/predictive_metrics.py'
+ outputting to 'v2_code/metrics/predictive_metrics.py'
+--------------------------------------------------------------------------------
+
+37:2: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+54:6: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+55:6: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+56:6: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+70:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+70:48: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+71:15: INFO: Renamed 'tf.nn.rnn_cell.GRUCell' to 'tf.compat.v1.nn.rnn_cell.GRUCell'
+72:33: INFO: Renamed 'tf.nn.dynamic_rnn' to 'tf.compat.v1.nn.dynamic_rnn'
+73:20: ERROR: Using member tf.contrib.layers.fully_connected in deprecated module tf.contrib. tf.contrib.layers.fully_connected cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+75:27: INFO: Renamed 'tf.all_variables' to 'tf.compat.v1.all_variables'
+81:11: INFO: tf.losses.absolute_difference requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+81:11: INFO: Renamed 'tf.losses.absolute_difference' to 'tf.compat.v1.losses.absolute_difference'
+83:13: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+87:9: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+88:11: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+--------------------------------------------------------------------------------
+

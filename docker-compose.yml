@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+
+  ###################################
+  # Jupyter   
+  ###################################
+  jupyter-3:
+    build:
+      context: ./image/jupyter
+    container_name: jupyter-3
+    hostname: jupyter-3
+    user: root
+    ports:
+      - 40000:8888
+      - 6007:6006
+    volumes: 
+      - ./files/:/home/jovyan/work
+    environment:
+      - GRANT_SUDO=true
+      - JUPYTER_TOKEN=password
+    working_dir: /home/jovyan/work
+    restart: always
+    logging:
+      options:
+        max-size: 10m
+        max-file: "4"
+
